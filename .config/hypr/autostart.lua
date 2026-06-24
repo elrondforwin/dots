@@ -1,0 +1,6 @@
+hl.on("hyprland.start", function()
+    hl.exec_cmd("noctalia")
+    hl.exec_cmd("/usr/lib/pam_kwallet_init")
+    hl.exec_cmd("hyprctl setcursor MacOS-Tahoe-Cursor 24")
+    hl.exec_cmd("/usr/lib/xdg-desktop-portal -r -v")
+end)

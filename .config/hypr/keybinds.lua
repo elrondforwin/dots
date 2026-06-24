@@ -68,8 +68,8 @@ hl.bind(vars.keyTogglePinWindow, hl.dsp.window.pin())
 
 hl.bind(vars.keyScrollNextWindow, hl.dsp.layout("focus r"))
 hl.bind(vars.keyScrollPrevWindow, hl.dsp.layout("focus l"))
-hl.bind(vars.keyNextWorkspace, hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(vars.keyPrevWorkspace, hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(vars.keyNextWorkspace, hl.dsp.focus({ workspace = "+1" }))
+hl.bind(vars.keyPrevWorkspace, hl.dsp.focus({ workspace = "-1" }))
 hl.config({ binds = { scroll_event_delay = 0, } })
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging

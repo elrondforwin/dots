@@ -26,6 +26,9 @@ for i = 1, 10 do
     hl.bind(vars.keyMoveToWorkspaceModifier .. " + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
+hl.bind(vars.keyMoveWindowToNextWorkspace, hl.dsp.window.move({ workspace = "-1" }))
+hl.bind(vars.keyMoveWindowToPrevWorkspace, hl.dsp.window.move({ workspace = "+1" }))
+
 hl.bind(vars.keyToggleSpecialWorkspace, hl.dsp.workspace.toggle_special("scratchpad"))
 hl.bind(vars.keyMoveWindowToSpecialWorkspace, hl.dsp.window.move({ workspace = "special:scratchpad" }))
 

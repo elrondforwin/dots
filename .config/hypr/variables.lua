@@ -64,6 +64,8 @@ local vars = {
     keyScrollPrevWindow = "SUPER + mouse_down",
     keyNextWorkspace = "SUPER + SHIFT + mouse_up",
     keyPrevWorkspace = "SUPER + SHIFT + mouse_down",
+    keyMoveWindowToNextWorkspace = "SUPER + CTRL + mouse_down",
+    keyMoveWindowToPrevWorkspace = "SUPER + CTRL + mouse_up",
 
 }
 return vars

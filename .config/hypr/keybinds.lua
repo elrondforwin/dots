@@ -32,32 +32,32 @@ hl.bind(vars.keyMoveWindowToPrevWorkspace, hl.dsp.window.move({ workspace = "+1"
 hl.bind(vars.keyToggleSpecialWorkspace, hl.dsp.workspace.toggle_special("scratchpad"))
 hl.bind(vars.keyMoveWindowToSpecialWorkspace, hl.dsp.window.move({ workspace = "special:scratchpad" }))
 
-hl.bind(vars.keyFocusModifier .. " + " .. vars.keyLeft, hl.dsp.layout("focus l"))
-hl.bind(vars.keyFocusModifier .. " + " .. vars.keyRight, hl.dsp.layout("focus r"))
-hl.bind(vars.keyFocusModifier .. " + " .. vars.keyUp, hl.dsp.layout("focus u"))
-hl.bind(vars.keyFocusModifier .. " + " .. vars.keyDown, hl.dsp.layout("focus d"))
+-- hl.bind(vars.keyFocusModifier .. " + " .. vars.keyLeft, hl.dsp.layout("focus l"))
+-- hl.bind(vars.keyFocusModifier .. " + " .. vars.keyRight, hl.dsp.layout("focus r"))
+-- hl.bind(vars.keyFocusModifier .. " + " .. vars.keyUp, hl.dsp.layout("focus u"))
+-- hl.bind(vars.keyFocusModifier .. " + " .. vars.keyDown, hl.dsp.layout("focus d"))
 
-hl.bind(vars.keySwapModifier .. " + " .. vars.keyLeft, hl.dsp.layout("swapcol l"))
-hl.bind(vars.keySwapModifier .. " + " .. vars.keyRight, hl.dsp.layout("swapcol r"))
-hl.bind(vars.keySwapModifier .. " + " .. vars.keyUp, hl.dsp.window.swap({ direction = "up" }))
-hl.bind(vars.keySwapModifier .. " + " .. vars.keyDown, hl.dsp.window.swap({ direction = "down" }))
+-- hl.bind(vars.keySwapModifier .. " + " .. vars.keyLeft, hl.dsp.layout("swapcol l"))
+-- hl.bind(vars.keySwapModifier .. " + " .. vars.keyRight, hl.dsp.layout("swapcol r"))
+-- hl.bind(vars.keySwapModifier .. " + " .. vars.keyUp, hl.dsp.window.swap({ direction = "up" }))
+-- hl.bind(vars.keySwapModifier .. " + " .. vars.keyDown, hl.dsp.window.swap({ direction = "down" }))
 
 hl.bind(vars.keyMoveModifier .. " + " .. vars.keyLeft, hl.dsp.window.move({ group_aware = true, direction = "l" }))
 hl.bind(vars.keyMoveModifier .. " + " .. vars.keyRight, hl.dsp.window.move({ group_aware = true, direction = "r" }))
 hl.bind(vars.keyMoveModifier .. " + " .. vars.keyUp, hl.dsp.window.move({ group_aware = true, direction = "u" }))
 hl.bind(vars.keyMoveModifier .. " + " .. vars.keyDown, hl.dsp.window.move({ group_aware = true, direction = "d" }))
 
-hl.bind(vars.keyResizeModifier .. " + " .. vars.keyLeft,
-    hl.dsp.layout("colresize -0.1"))
-
-hl.bind(vars.keyResizeModifier .. " + " .. vars.keyRight,
-    hl.dsp.layout("colresize +0.1"))
-
-hl.bind(vars.keyResizeModifier .. " + " .. vars.keyDown,
-    hl.dsp.window.resize({ x = 0.0, y = -100.0, relative = true }))
-
-hl.bind(vars.keyResizeModifier .. " + " .. vars.keyUp,
-    hl.dsp.window.resize({ x = 0.0, y = 100.0, relative = true }))
+-- hl.bind(vars.keyResizeModifier .. " + " .. vars.keyLeft,
+--     hl.dsp.layout("colresize -0.1"))
+--
+-- hl.bind(vars.keyResizeModifier .. " + " .. vars.keyRight,
+--     hl.dsp.layout("colresize +0.1"))
+--
+-- hl.bind(vars.keyResizeModifier .. " + " .. vars.keyDown,
+--     hl.dsp.window.resize({ x = 0.0, y = -100.0, relative = true }))
+--
+-- hl.bind(vars.keyResizeModifier .. " + " .. vars.keyUp,
+--     hl.dsp.window.resize({ x = 0.0, y = 100.0, relative = true }))
 
 hl.bind(vars.keyToggleGroup, hl.dsp.group.toggle())
 hl.bind(vars.keyLockActiveGroup, hl.dsp.group.lock())
@@ -97,26 +97,26 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tru
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
 -- Resize Windows
--- hl.bind(vars.keyResizeModifier .. " + " .. vars.keyLeft,
---     hl.dsp.window.resize({ x = -100., y = 0.0, relative = true }))
---
--- hl.bind(vars.keyResizeModifier .. " + " .. vars.keyRight,
---     hl.dsp.window.resize({ x = 100.0, y = 0.0, relative = true }))
---
--- hl.bind(vars.keyResizeModifier .. " + " .. vars.keyDown,
---     hl.dsp.window.resize({ x = 0.0, y = -100.0, relative = true }))
---
--- hl.bind(vars.keyResizeModifier .. " + " .. vars.keyUp,
---     hl.dsp.window.resize({ x = 0.0, y = 100.0, relative = true }))
+hl.bind(vars.keyResizeModifier .. " + " .. vars.keyLeft,
+    hl.dsp.window.resize({ x = -100., y = 0.0, relative = true }))
+
+hl.bind(vars.keyResizeModifier .. " + " .. vars.keyRight,
+    hl.dsp.window.resize({ x = 100.0, y = 0.0, relative = true }))
+
+hl.bind(vars.keyResizeModifier .. " + " .. vars.keyUp,
+    hl.dsp.window.resize({ x = 0.0, y = -100.0, relative = true }))
+
+hl.bind(vars.keyResizeModifier .. " + " .. vars.keyDown,
+    hl.dsp.window.resize({ x = 0.0, y = 100.0, relative = true }))
 
 -- Focus Windows
--- hl.bind(vars.keyFocusModifier .. " + " .. vars.keyLeft, hl.dsp.focus({ direction = "left" }))
--- hl.bind(vars.keyFocusModifier .. " + " .. vars.keyRight, hl.dsp.focus({ direction = "right" }))
--- hl.bind(vars.keyFocusModifier .. " + " .. vars.keyUp, hl.dsp.focus({ direction = "up" }))
--- hl.bind(vars.keyFocusModifier .. " + " .. vars.keyDown, hl.dsp.focus({ direction = "down" }))
+hl.bind(vars.keyFocusModifier .. " + " .. vars.keyLeft, hl.dsp.focus({ direction = "left" }))
+hl.bind(vars.keyFocusModifier .. " + " .. vars.keyRight, hl.dsp.focus({ direction = "right" }))
+hl.bind(vars.keyFocusModifier .. " + " .. vars.keyUp, hl.dsp.focus({ direction = "up" }))
+hl.bind(vars.keyFocusModifier .. " + " .. vars.keyDown, hl.dsp.focus({ direction = "down" }))
 
 -- Swap Windows
--- hl.bind(vars.keySwapModifier .. " + " .. vars.keyLeft, hl.dsp.window.swap({ direction = "left" }))
--- hl.bind(vars.keySwapModifier .. " + " .. vars.keyRight, hl.dsp.window.swap({ direction = "right" }))
--- hl.bind(vars.keySwapModifier .. " + " .. vars.keyUp, hl.dsp.window.swap({ direction = "up" }))
--- hl.bind(vars.keySwapModifier .. " + " .. vars.keyDown, hl.dsp.window.swap({ direction = "down" }))
+hl.bind(vars.keySwapModifier .. " + " .. vars.keyLeft, hl.dsp.window.swap({ direction = "left" }))
+hl.bind(vars.keySwapModifier .. " + " .. vars.keyRight, hl.dsp.window.swap({ direction = "right" }))
+hl.bind(vars.keySwapModifier .. " + " .. vars.keyUp, hl.dsp.window.swap({ direction = "up" }))
+hl.bind(vars.keySwapModifier .. " + " .. vars.keyDown, hl.dsp.window.swap({ direction = "down" }))

@@ -10,7 +10,7 @@ hl.config({
         -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
         allow_tearing    = true,
 
-        layout           = "scrolling",
+        layout           = "dwindle",
     },
 
     decoration = {

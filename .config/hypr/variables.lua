@@ -52,10 +52,10 @@ local vars = {
     keyChangeGroupPrev = "SUPER + SHIFT + TAB",
     keyMoveOutOfGroup = "SUPER + D",
 
-    keyLeft = "H",
-    keyRight = "L",
-    keyUp = "K",
-    keyDown = "J",
+    keyLeft = "LEFT",
+    keyRight = "RIGHT",
+    keyUp = "UP",
+    keyDown = "DOWN",
 
     keyToggleSpecialWorkspace = "SUPER + GRAVE",
     keyMoveWindowToSpecialWorkspace = "SUPER + SHIFT + GRAVE",

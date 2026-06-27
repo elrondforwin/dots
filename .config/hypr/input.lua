@@ -3,7 +3,7 @@ hl.config({
         kb_layout     = "us,tr",
         kb_variant    = "",
         kb_model      = "",
-        kb_options    = "caps:escape,grp:win_space_toggle",
+        kb_options    = "grp:win_space_toggle",
         kb_rules      = "",
         accel_profile = "flat",
         repeat_delay  = 250,

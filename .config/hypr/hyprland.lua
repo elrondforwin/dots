@@ -8,3 +8,5 @@ require("env")
 require("decoration")
 require("layouts")
 require("misc")
+-- uncomment this if you are gonna use nwg-displays
+-- require("monitors")

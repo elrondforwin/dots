@@ -26,8 +26,10 @@ for i = 1, 10 do
     hl.bind(vars.keyMoveToWorkspaceModifier .. " + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
-hl.bind(vars.keyMoveWindowToNextWorkspace, hl.dsp.window.move({ workspace = "-1" }))
-hl.bind(vars.keyMoveWindowToPrevWorkspace, hl.dsp.window.move({ workspace = "+1" }))
+hl.bind(vars.keyMoveWindowToNextWorkspace, hl.dsp.window.move({ workspace = "+1" }))
+hl.bind(vars.keyMoveWindowToPrevWorkspace, hl.dsp.window.move({ workspace = "-1" }))
+hl.bind(vars.keyMoveWindowToNextWorkspaceAlt, hl.dsp.window.move({ workspace = "+1" }))
+hl.bind(vars.keyMoveWindowToPrevWorkspaceAlt, hl.dsp.window.move({ workspace = "-1" }))
 
 hl.bind(vars.keyToggleSpecialWorkspace, hl.dsp.workspace.toggle_special("scratchpad"))
 hl.bind(vars.keyMoveWindowToSpecialWorkspace, hl.dsp.window.move({ workspace = "special:scratchpad" }))
@@ -73,6 +75,8 @@ hl.bind(vars.keyScrollNextWindow, hl.dsp.layout("focus r"))
 hl.bind(vars.keyScrollPrevWindow, hl.dsp.layout("focus l"))
 hl.bind(vars.keyNextWorkspace, hl.dsp.focus({ workspace = "+1" }))
 hl.bind(vars.keyPrevWorkspace, hl.dsp.focus({ workspace = "-1" }))
+hl.bind(vars.keyNextWorkspaceAlt, hl.dsp.focus({ workspace = "+1" }))
+hl.bind(vars.keyPrevWorkspaceAlt, hl.dsp.focus({ workspace = "-1" }))
 hl.config({ binds = { scroll_event_delay = 0, } })
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
@@ -120,3 +124,7 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 -- hl.bind(vars.keySwapModifier .. " + " .. vars.keyRight, hl.dsp.window.swap({ direction = "right" }))
 -- hl.bind(vars.keySwapModifier .. " + " .. vars.keyUp, hl.dsp.window.swap({ direction = "up" }))
 -- hl.bind(vars.keySwapModifier .. " + " .. vars.keyDown, hl.dsp.window.swap({ direction = "down" }))
+
+hl.bind(vars.keyToggleScrollOverview, function()
+    hl.plugin.scrolloverview.overview("toggle")
+end)

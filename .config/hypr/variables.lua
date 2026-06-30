@@ -64,8 +64,15 @@ local vars = {
     keyScrollPrevWindow = "SUPER + mouse_down",
     keyNextWorkspace = "SUPER + SHIFT + mouse_up",
     keyPrevWorkspace = "SUPER + SHIFT + mouse_down",
-    keyMoveWindowToNextWorkspace = "SUPER + CTRL + mouse_down",
-    keyMoveWindowToPrevWorkspace = "SUPER + CTRL + mouse_up",
+    keyNextWorkspaceAlt = "SUPER + J",
+    keyPrevWorkspaceAlt = "SUPER + K",
+    keyMoveWindowToNextWorkspace = "SUPER + CTRL + mouse_up",
+    keyMoveWindowToPrevWorkspace = "SUPER + CTRL + mouse_down",
+    keyMoveWindowToNextWorkspaceAlt = "SUPER + SHIFT + J",
+    keyMoveWindowToPrevWorkspaceAlt = "SUPER + SHIFT + K",
+
+    -- Requires https://github.com/yayuuu/hyprland-scroll-overview
+    keyToggleScrollOverview = "SUPER + A"
 
 }
 return vars

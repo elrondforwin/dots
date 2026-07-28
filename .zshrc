@@ -1,6 +1,16 @@
 # SOME ESSENTIAL PACKAGES
 # yay -S eza zoxide nvim bat unrar-free ncdu fzf fastfetch tmux
 
+# load typewritten if it exists
+if [ -d $HOME/.local/share/zsh/typewritten ]; then
+  export TYPEWRITTEN_PROMPT_LAYOUT="singleline"
+  export TYPEWRITTEN_RELATIVE_PATH="adaptive"
+  export TYPEWRITTEN_CURSOR="underscore"
+  fpath+=$HOME/.local/share/zsh/typewritten
+  autoload -U promptinit; promptinit
+  prompt typewritten
+fi
+
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -52,7 +62,7 @@ zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 
 # add powerlevel10k
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+# zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -272,7 +282,7 @@ function y() {
 }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 if command -v zoxide > /dev/null; then
     export _ZO_DOCTOR=0

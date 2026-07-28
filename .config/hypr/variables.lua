@@ -70,6 +70,8 @@ local vars = {
     keyMoveWindowToPrevWorkspace = "SUPER + CTRL + mouse_down",
     keyMoveWindowToNextWorkspaceAlt = "SUPER + SHIFT + J",
     keyMoveWindowToPrevWorkspaceAlt = "SUPER + SHIFT + K",
+    keySwapWindowToLeft = "SUPER + ALT + mouse_up",
+    keySwapWindowToRight = "SUPER + ALT + mouse_down",
 
     -- Requires https://github.com/yayuuu/hyprland-scroll-overview
     keyToggleScrollOverview = "SUPER + A"

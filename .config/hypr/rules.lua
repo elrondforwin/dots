@@ -83,11 +83,15 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { class = "Termius" },
     no_screen_share = true,
 })
 
 hl.window_rule({
     match = { class = "obsidian" },
     no_screen_share = true,
+})
+
+hl.window_rule({
+    match = { class = "imv" },
+    float = true,
 })

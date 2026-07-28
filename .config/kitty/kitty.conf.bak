@@ -1,5 +1,5 @@
 # Configuration
-font_family                 Terminess NF
+font_family                 IosevkaTerm NF
 font_size                   15.0
 bold_font                   auto
 italic_font                 auto
@@ -15,14 +15,12 @@ enable_audio_bell           no
 window_padding_width        12
 hide_window_decorations     no
 background_opacity          1.0
-dynamic_background_opacity  no
+dynamic_background_opacity  yes
 confirm_os_window_close     0
 cursor_trail                1
 cursor_shape                underline
 window_margin_width         12
 pixel_scroll		            yes
-background_blur             1
-startup_session ~/.config/kitty/startup.session
 
 map ctrl+plus  change_font_size all +1
 map ctrl+equal  change_font_size all +1
@@ -36,5 +34,4 @@ map ctrl+kp_0 change_font_size all 0
 map page_up    scroll_page_up
 map page_down    scroll_page_down
 
-# include ~/.cache/wal/colors-kitty.conf
-include current-theme.conf
+include ~/.cache/wal/colors-kitty.conf

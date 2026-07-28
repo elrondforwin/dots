@@ -41,6 +41,8 @@ hl.bind(vars.keyFocusModifier .. " + " .. vars.keyDown, hl.dsp.layout("focus d")
 
 hl.bind(vars.keySwapModifier .. " + " .. vars.keyLeft, hl.dsp.layout("swapcol l"))
 hl.bind(vars.keySwapModifier .. " + " .. vars.keyRight, hl.dsp.layout("swapcol r"))
+hl.bind(vars.keySwapWindowToLeft, hl.dsp.layout("swapcol l"))
+hl.bind(vars.keySwapWindowToRight, hl.dsp.layout("swapcol r"))
 hl.bind(vars.keySwapModifier .. " + " .. vars.keyUp, hl.dsp.window.swap({ direction = "up" }))
 hl.bind(vars.keySwapModifier .. " + " .. vars.keyDown, hl.dsp.window.swap({ direction = "down" }))
 
@@ -48,6 +50,7 @@ hl.bind(vars.keyMoveModifier .. " + " .. vars.keyLeft, hl.dsp.window.move({ grou
 hl.bind(vars.keyMoveModifier .. " + " .. vars.keyRight, hl.dsp.window.move({ group_aware = true, direction = "r" }))
 hl.bind(vars.keyMoveModifier .. " + " .. vars.keyUp, hl.dsp.window.move({ group_aware = true, direction = "u" }))
 hl.bind(vars.keyMoveModifier .. " + " .. vars.keyDown, hl.dsp.window.move({ group_aware = true, direction = "d" }))
+
 
 hl.bind(vars.keyResizeModifier .. " + " .. vars.keyLeft,
     hl.dsp.layout("colresize -0.1"))

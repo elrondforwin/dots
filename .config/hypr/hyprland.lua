@@ -1,4 +1,3 @@
-require("noctalia").apply_theme()
 require("keybinds")
 require("animations")
 require("rules")
@@ -8,5 +7,5 @@ require("env")
 require("decoration")
 require("layouts")
 require("misc")
--- uncomment this if you are gonna use nwg-displays
--- require("monitors")
+require("monitors")
+require("workspaces")

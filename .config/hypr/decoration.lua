@@ -1,7 +1,12 @@
 hl.config({
     general = {
-        gaps_in          = 0,
-        gaps_out         = 4,
+        gaps_in          = 2,
+        gaps_out         = 6,
+
+        col = {
+            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
+            inactive_border = "rgba(595959aa)",
+        },
 
         border_size      = 2,
 
@@ -10,11 +15,11 @@ hl.config({
         -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
         allow_tearing    = true,
 
-        layout           = "scrolling",
+        layout           = "dwindle",
     },
 
     decoration = {
-        rounding         = 20,
+        rounding         = 0,
         -- rounding_power   = 4,
 
         active_opacity   = 1.0,
@@ -31,7 +36,7 @@ hl.config({
             enabled = false,
             size = 8,
             passes = 3,
-            brightness = 0.4,
+            brightness = 0.8,
             contrast = 0.8,
             noise = 0.05,
             new_optimizations = true,
@@ -42,10 +47,19 @@ hl.config({
 
     group = {
         groupbar = {
-            enabled = false,
-            indicator_height = 8,
-            render_titles = false,
-            rounding = 4,
+            enabled = true,
+            col = {
+                active = "rgba(ff00ffff)",
+                inactive = "rgba(ff00ff70)",
+                locked_active = "rgba(ff002bff)",
+                locked_inactive = "rgba(ff002b70)",
+            },
+        },
+        col = {
+            border_active = "rgba(ff00ffff)",
+            border_inactive = "rgba(ff00ff70)",
+            border_locked_active = "rgba(ff002bff)",
+            border_locked_inactive = "rgba(ff002b70)",
         },
     },
 

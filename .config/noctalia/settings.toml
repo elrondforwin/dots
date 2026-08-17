@@ -1,0 +1,292 @@
+config_version = 12
+
+[bar.default]
+border = "surface"
+capsule = true
+capsule_opacity = 0.0
+capsule_radius = 4
+end = [ "bar_2", "status", "privacy", "group:g2" ]
+font_family = "SF Pro"
+margin_ends = 0
+padding = 6
+radius = 0
+start = [ "workspaces", "bar" ]
+
+    [bar.default.monitor.sunshine]
+    enabled = false
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g2"
+    members = [ "tray", "recorder", "bar_3", "nix-monitor", "volume", "notifications", "control-center" ]
+    opacity = 0.0
+    padding = 6.0
+    radius = 4.0
+    widget_spacing = 12
+
+[control_center]
+hidden_tabs = [ "power" ]
+sidebar = "none"
+sidebar_section = "none"
+
+    [control_center.calendar]
+    show_events_card = false
+
+    [[control_center.shortcuts]]
+    type = "bluetooth"
+
+    [[control_center.shortcuts]]
+    type = "caffeine"
+
+    [[control_center.shortcuts]]
+    type = "nightlight"
+
+    [[control_center.shortcuts]]
+    type = "notification"
+
+    [[control_center.shortcuts]]
+    type = "power_profile"
+
+    [[control_center.shortcuts]]
+    type = "screen_time"
+
+[desktop_widgets]
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 32
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[dock]
+auto_hide = true
+background_opacity = 0.99999997764825821
+enabled = false
+reserve_space = false
+
+[location]
+address = "Tekkeköy, Turkey"
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@sunshine", "lockscreen-login-box@DP-2" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-2"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "DP-2"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-2".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@sunshine"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 590.0
+    cy = 638.0
+    output = "sunshine"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@sunshine".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[notification]
+background_opacity = 0.99999997764825821
+position = "bottom_right"
+
+[osd]
+background_opacity = 0.99999997764825821
+position = "bottom_center"
+position_vertical = "center_right"
+
+    [osd.kinds]
+    media = false
+
+[plugin_settings."avivbintangaringga/nix-monitor"]
+panel_placement = "floating"
+
+[plugin_settings."davemhammer/tailscale"]
+manager_position = "auto"
+
+[plugin_settings."elrond/opencode-go-usage"]
+panel_placement = "floating"
+
+[plugin_settings."noctalia/screen_recorder"]
+audio_source = "both"
+frame_rate = 30
+video_qp = 30
+
+[plugin_settings."raycursive/discord-voice"]
+discord_binary = """/var/lib/flatpak/app/com.discordapp.Discord/x86_64/stable/3838d63d7fc04c847aaddbbf0f220de2dd681085665f6af3bb2c24b56f3c0817/files/bin
+"""
+panel_placement = "floating"
+
+[plugin_settings."yuuto/calculator"]
+panel_placement = "floating"
+
+[plugins]
+enabled = [
+    "radimous/prismlauncher-instances",
+    "avivbintangaringga/nix-monitor",
+    "elrond/opencode-go-usage",
+    "davemhammer/tailscale",
+    "noctalia/screen_recorder",
+    "raycursive/discord-voice",
+    "rylos/syncthing",
+    "icefish/phone-connect"
+]
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/official-plugins"
+    name = "official"
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/community-plugins"
+    name = "community"
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/elrondforwin/my-noctalia-plugins"
+    name = "my-plugins"
+
+[shell]
+button_borders = false
+card_borders = false
+font_family = "SF Pro"
+input_borders = false
+popup_borders = false
+screen_time_enabled = true
+telemetry_enabled = true
+
+    [shell.animation]
+    enabled = false
+
+    [shell.launcher]
+    categories = false
+
+    [shell.panel]
+    borders = false
+    control_center_placement = "floating"
+    open_near_click_clipboard = true
+    open_near_click_control_center = true
+    wallpaper_placement = "floating"
+
+    [shell.screenshot]
+    confirm_region = true
+    directory = "~/Pictures/Screenshots"
+    pipe_command = "satty -f -"
+    pipe_to_command = true
+    remember_last_region = true
+
+[theme]
+builtin = "Tokyo-Night"
+community_palette = "Tokyo Night Storm"
+custom_palette = "born-to-be-root-not-to-reboot-ts"
+source = "custom"
+wallpaper_scheme = "m3-tonal-spot"
+
+    [theme.templates]
+    builtin_ids = [ "gtk3", "gtk4", "kcolorscheme", "kitty", "qt" ]
+    community_ids = [ "discord", "bat", "yazi" ]
+
+[wallpaper.default]
+path = "/home/elrond/Pictures/Wallpapers/wallhaven-l3q9pr.jpg"
+
+[wallpaper.last]
+path = "/home/elrond/Pictures/Wallpapers/wallhaven-l3q9pr.jpg"
+
+[wallpaper.monitors.DP-2]
+path = "/home/elrond/Pictures/Wallpapers/wallhaven-l3q9pr.jpg"
+
+[wallpaper.monitors.sunshine]
+path = "/home/elrond/Pictures/Wallpapers/wallhaven-qrmkqq.jpg"
+
+[widget.bar]
+hide_when_disconnected = true
+type = "raycursive/discord-voice:bar"
+
+[widget.bar_2]
+type = "elrond/opencode-go-usage:bar"
+
+[widget.bar_3]
+type = "rylos/syncthing:bar"
+
+[widget.clock]
+anchor = true
+format = "{:%H:%M, %a %b %d}"
+
+[widget.media]
+title_scroll = "on_hover"
+
+[widget.nix-monitor]
+show_text = false
+type = "avivbintangaringga/nix-monitor:nix-monitor"
+
+[widget.recorder]
+type = "noctalia/screen_recorder:recorder"
+
+[widget.status]
+type = "davemhammer/tailscale:status"
+
+[widget.sysmon]
+stat = "gpu_temp"
+
+[widget.tray]
+detached_panel = true
+drawer = true
+
+[widget.volume]
+show_label = false
+
+[widget.weather]
+show_temperature = false
+
+[widget.workspaces]
+active_pill_size = 1.0
+focused_color = "tertiary"
+max_label_chars = 20

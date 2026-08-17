@@ -24,7 +24,7 @@ local vars = {
     cmdLockScreen = "noctalia msg session lock",
 
     cmdOpenColorPicker = "hyprpicker -a",
-    cmdScreenshot = "hyprshot -z -m region -o /home/$USER/Pictures/Screenshots",
+    cmdScreenshot = "noctalia msg screenshot-region",
     cmdScreenshotWithEdit = "hyprshot -z -m region --raw | satty -f -",
     cmdToggleFreeze = "wl-freeze -c \"hyprctl activewindow -j | jq '.pid'\"",
 
@@ -72,6 +72,8 @@ local vars = {
     keyMoveWindowToPrevWorkspaceAlt = "SUPER + SHIFT + K",
     keySwapWindowToLeft = "SUPER + ALT + mouse_up",
     keySwapWindowToRight = "SUPER + ALT + mouse_down",
+
+    keyToggleNoScreenshare = "SUPER + SHIFT + R",
 
     -- Requires https://github.com/yayuuu/hyprland-scroll-overview
     keyToggleScrollOverview = "SUPER + A"

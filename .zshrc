@@ -1,15 +1,12 @@
-# SOME ESSENTIAL PACKAGES
-# yay -S eza zoxide nvim bat unrar-free ncdu fzf fastfetch tmux
-
-# load typewritten if it exists
-if [ -d $HOME/.local/share/zsh/typewritten ]; then
-  export TYPEWRITTEN_PROMPT_LAYOUT="singleline"
-  export TYPEWRITTEN_RELATIVE_PATH="adaptive"
-  export TYPEWRITTEN_CURSOR="underscore"
-  fpath+=$HOME/.local/share/zsh/typewritten
-  autoload -U promptinit; promptinit
-  prompt typewritten
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+# SOME ESSENTIAL PACKAGES
+# yay -S eza zoxide nvim bat unrar-free ncdu fzf fastfetch
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -24,18 +21,7 @@ fi
 export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:/home/elrond/.local/share/flatpak/exports/share:${XDG_DATA_DIRS:-/usr/local/share:/usr/share}"
 
 # Set $EDITOR
-PREFFERED_EDITOR="nvim"
-FALLBACK_EDITOR="nvim"
-if command -v "$PREFFERED_EDITOR" > /dev/null; then
-  export EDITOR="$PREFFERED_EDITOR"
-else command -v "$FALLBACK_EDITOR" > /dev/null;
-  export EDITOR="$FALLBACK_EDITOR"
-fi
-
-# I don't want to add this env var to every wm I use.
-# if command -v qt6ct > /dev/null; then
-#   export QT_QPA_PLATFORMTHEME="qt6ct"
-# fi
+export EDITOR="nvim"
 
 # add ~/.local/bin to $PATH
 PATH=$PATH:/$HOME/.local/bin
@@ -55,17 +41,19 @@ zinit light Aloxaf/fzf-tab
 # Add in snippets
 zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
-# zinit snippet OMZP::sudo
+zinit snippet OMZP::sudo
 zinit snippet OMZP::archlinux
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 
 # add powerlevel10k
-# zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Load completions
-autoload -Uz compinit && compinit
+# autoload -Uz compinit && compinit
+autoload -Uz compinit
+compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/compdump-$HOST"
 
 zinit cdreplay -q
 
@@ -121,7 +109,6 @@ alias egrep='egrep --color=auto'
 alias hw='hwinfo --short' # Hardware Info
 alias big="expac -H M '%m\t%n' | sort -h | nl" # Sort installed packages according to size in MB
 alias gitpkg='pacman -Q | grep -i "\-git" | wc -l' # List amount of -git packages
-# alias update='sudo pacman -Syu'
 alias img="kitten icat"
 alias copy="wl-copy"
 alias jctl="journalctl -p 3 -xb"
@@ -133,14 +120,12 @@ alias zed='zeditor'
 alias code="code --enable-features=UseOzonePlatform --ozone-platform=wayland"
 alias code-oss="code --enable-features=UseOzonePlatform --ozone-platform=wayland"
 alias r="rmpc"
-alias reloadwaybar="waybarctl reload"
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 alias nemohere="nemo . &> /dev/null & disown"
 alias dolphere="dolphin . &> /dev/null & disown"
 alias rcp='rsync --archive --modify-window=2 --progress --verbose --itemize-changes --stats --human-readable'
 alias f='fastfetch'
 alias t='tmux'
-alias notes="dredge"
 alias kittyconf="nvim ~/.config/kitty/kitty.conf; cd -"
 alias hyprconf="cd ~/.config/hypr/configs; y"
 alias airplay="uxplay -bt709 -avdec -vsync -fps 60"
@@ -162,59 +147,10 @@ bindkey '^[[3;5~' kill-word
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 
-function update() {
-    # detect aur helper
-    local HELPER
-    if command -v yay > /dev/null; then
-        HELPER="yay"
-    else if command -v paru > /dev/null; then
-        HELPER="paru"
-    else HELPER="none"
-        fi
-    fi
-
-    FLATPAK="false"
-    # check flatpak
-    if command -v flatpak > /dev/null; then
-        FLATPAK="true"
-    fi
-
-    if [[ "$HELPER" == "none" ]]; then
-        echo "Please install 'yay' or 'paru'"
-        exit 1
-    fi
-
-    notify-send "Updating system..."
-    "$HELPER" -Syu
-    if [[ "$FLATPAK" == "true" ]]; then
-        notify-send "Updating flatpak..."
-        flatpak update -y
-    fi
-}
-
 # Shell integrations and some aliases
 if command -v fzf > /dev/null; then
     eval "$(fzf --zsh)"
-    # export FZF_DEFAULT_OPTS="--color=bg+:0"
-    # export FZF_DEFAULT_OPTS="
-    #   --color=fg:#908caa,bg:#191724,hl:#ebbcba
-    #   --color=fg+:#e0def4,bg+:#26233a,hl+:#ebbcba
-    #   --color=border:#403d52,header:#31748f,gutter:#191724
-    #   --color=spinner:#f6c177,info:#9ccfd8
-    #   --color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
-    # export FZF_DEFAULT_OPTS="--color 16"
-
-    # # tokyo night theme
-    export FZF_DEFAULT_OPTS="
-      --color=fg:#c0caf5,bg:-1,hl:#7aa2f7
-      --color=fg+:#c0caf5,bg+:-1,hl+:#7aa2f7
-      --color=border:#414868,header:#7dcfff,gutter:#1a1b26
-      --color=spinner:#7dcfff,info:#7dcfff
-      --color=pointer:#7dcfff,marker:#f7768e,prompt:#9aa5ce"
-
 fi
-
-
 
 if command -v bat > /dev/null; then
     alias lsblk="lsblk | bat -l conf -p"
@@ -265,13 +201,6 @@ extract() {
 	done
 }
 
-# launch hyprland automatically
-# if command -v Hyprland > /dev/null; then
-#   if [[ ! -f /tmp/hyprland.lock ]]; then
-#     touch /tmp/hyprland.lock
-#     start-hyprland
-#   fi
-# fi
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -281,10 +210,10 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 if command -v zoxide > /dev/null; then
     export _ZO_DOCTOR=0
     eval "$(zoxide init --cmd cd zsh)"
 fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

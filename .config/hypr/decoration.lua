@@ -19,7 +19,7 @@ hl.config({
     },
 
     decoration = {
-        rounding         = 0,
+        rounding         = 8,
         -- rounding_power   = 4,
 
         active_opacity   = 1.0,
@@ -33,7 +33,7 @@ hl.config({
         },
 
         blur             = {
-            enabled = false,
+            enabled = true,
             size = 8,
             passes = 3,
             brightness = 0.8,
@@ -46,16 +46,27 @@ hl.config({
     },
 
     group = {
-        groupbar = {
-            enabled = true,
-            col = {
-                active = "rgba(ff00ffff)",
-                inactive = "rgba(ff00ff70)",
-                locked_active = "rgba(ff002bff)",
-                locked_inactive = "rgba(ff002b70)",
-            },
-        },
+      groupbar = {
+        font_size = 12,
+        font_family = "monospace",
+        font_weight_active = "ultraheavy",
+        font_weight_inactive = "bold",
+        indicator_height = 1,
+        indicator_gap = 5,
+        height = 22,
+        gaps_in = 5,
+        gaps_out = 0,
+        text_color = "rgb(ffffff)",
+        text_color_inactive = "rgba(ffffff90)",
         col = {
+          active = "rgba(00000040)",
+          inactive = "rgba(00000020)",
+        },
+        gradients = true,
+        gradient_rounding = 0,
+        gradient_round_only_edges = false,
+    },
+    col = {
             border_active = "rgba(ff00ffff)",
             border_inactive = "rgba(ff00ff70)",
             border_locked_active = "rgba(ff002bff)",

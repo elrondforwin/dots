@@ -1,6 +1,4 @@
 hl.on("hyprland.start", function()
     hl.exec_cmd("noctalia")
-    hl.exec_cmd("/usr/lib/pam_kwallet_init")
-    hl.exec_cmd("/run/current-system/sw/bin/systemctl --user start hyprland-session.target")
     hl.exec_cmd("kdeconnectd")
 end)

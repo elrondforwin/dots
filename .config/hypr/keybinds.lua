@@ -2,7 +2,7 @@ local vars = {
 
     -- Apps
     appTerminal = "kitty -1",
-    appFileManager = "dolphin",
+    appFileManager = "kitty -1 yazi",
 
     keyOpenTerminal = "SUPER + Return",
     keyOpenFileManager = "SUPER + E",

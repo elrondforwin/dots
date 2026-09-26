@@ -4,7 +4,7 @@ hl.config({
         gaps_out         = 6,
 
         col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
+            active_border   = { colors = {"rgba(ffc799ee)", "rgba(ffc799ee)"}, angle = 45 },
             inactive_border = "rgba(595959aa)",
         },
 
@@ -19,21 +19,21 @@ hl.config({
     },
 
     decoration = {
-        rounding         = 8,
+        rounding         = 0,
         -- rounding_power   = 4,
 
         active_opacity   = 1.0,
         inactive_opacity = 1.0,
 
         shadow           = {
-            enabled      = false,
+            enabled      = true,
             range        = 4,
             render_power = 3,
             color        = 0xee1a1a1a,
         },
 
         blur             = {
-            enabled = true,
+            enabled = false,
             size = 8,
             passes = 3,
             brightness = 0.8,
@@ -76,5 +76,6 @@ hl.config({
 
     cursor = {
         no_warps = true,
+        inactive_timeout = 5,
     }
 })

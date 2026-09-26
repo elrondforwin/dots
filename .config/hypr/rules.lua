@@ -22,15 +22,23 @@ hl.window_rule({
     no_focus = true,
 })
 
-hl.layer_rule({
-  name = "noctalia",
-  match = {
-    namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd)$",
-  },
-  ignore_alpha = 0.5,
-  blur = true,
-  blur_popups = true,
+hl.window_rule({
+    name = "chatgpt app no blur",
+    match = {
+        class = "chatgpt",
+    },
+    no_blur = true,
 })
+
+-- hl.layer_rule({
+--   name = "noctalia",
+--   match = {
+--     namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd)$",
+--   },
+--   ignore_alpha = 0.5,
+--   blur = true,
+--   blur_popups = true,
+-- })
 
 
 hl.window_rule({
@@ -52,7 +60,7 @@ hl.window_rule({
 })
 
 -- dynamically hide windows from screenshare
-local hideFromScreeshareClasses = { "proton-pass", "Termius", "obsidian" }
+local hideFromScreeshareClasses = { "proton-pass", "Termius", "md.obsidian.Obsidian" }
 
 hl.on("window.open", function(win)
   if win == nil then return end

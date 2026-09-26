@@ -1,4 +1,5 @@
 hl.on("hyprland.start", function()
     hl.exec_cmd("noctalia")
     hl.exec_cmd("kdeconnectd")
+    hl.exec_cmd("gsr-ui launch-hide-announce")
 end)

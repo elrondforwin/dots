@@ -2,7 +2,7 @@ local vars = {
 
     -- Apps
     appTerminal = "kitty -1",
-    appFileManager = "kitty -1 yazi",
+    appFileManager = "dolphin",
 
     keyOpenTerminal = "SUPER + Return",
     keyOpenFileManager = "SUPER + E",
@@ -11,6 +11,7 @@ local vars = {
     keyToggleLauncher = "ALT + SPACE",
     keyToggleWallpapers = "SUPER + Y",
     keyToggleClipboard = "SUPER + V",
+    keyToggleBar = "SUPER + SHIFT + W",
     keyLockScreen = "SUPER + O",
 
     keyOpenColorPicker = "SUPER + SHIFT + C",
@@ -18,6 +19,7 @@ local vars = {
 
     cmdToggleLauncher = "noctalia msg panel-toggle launcher",
     cmdToggleClipboard = "noctalia msg panel-toggle clipboard",
+    cmdToggleBar = "noctalia msg bar-toggle default",
     cmdToggleWallpapers = "noctalia msg panel-toggle wallpaper",
     cmdLockScreen = "noctalia msg session lock",
 
@@ -74,6 +76,7 @@ hl.bind(vars.keyOpenFileManager, hl.dsp.exec_cmd(vars.appFileManager))
 hl.bind(vars.keyToggleLauncher, hl.dsp.exec_cmd(vars.cmdToggleLauncher))
 hl.bind(vars.keyToggleClipboard, hl.dsp.exec_cmd(vars.cmdToggleClipboard))
 hl.bind(vars.keyToggleWallpapers, hl.dsp.exec_cmd(vars.cmdToggleWallpapers))
+hl.bind(vars.keyToggleBar, hl.dsp.exec_cmd(vars.cmdToggleBar))
 hl.bind(vars.keyLockScreen, hl.dsp.exec_cmd(vars.cmdLockScreen))
 
 ----------------------------------------

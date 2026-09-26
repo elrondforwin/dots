@@ -6,8 +6,26 @@ delivery = "system"
 [ui]
 show_agent_labels_on_pane_borders = false
 
-[experimental]
-kitty_graphics = true
+[theme.custom]
+accent = "#ffc799"
+panel_bg = "reset"
+sidebar_bg = "reset"
+active_row_bg = "#262626"
+selection_bg = "#303030"
+surface0 = "#262626"
+surface1 = "#303030"
+surface_dim = "#050505"
+overlay0 = "#5e5e5e"
+overlay1 = "#a0a0a0"
+text = "#ffffff"
+subtext0 = "#a0a0a0"
+mauve = "#fbadff"
+green = "#99ffe4"
+yellow = "#ffc799"
+red = "#ff8080"
+blue = "#80b3ff"
+teal = "#99ffe4"
+peach = "#ffc080"
 
 [keys]
 prefix = "ctrl+a"

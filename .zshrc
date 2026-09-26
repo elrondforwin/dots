@@ -26,6 +26,9 @@ export EDITOR="nvim"
 # add ~/.local/bin to $PATH
 PATH=$PATH:/$HOME/.local/bin
 
+# add ~/.cargo/bin to $PATH
+PATH=$PATH:/$HOME/.cargo/bin
+
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
@@ -130,6 +133,7 @@ alias kittyconf="nvim ~/.config/kitty/kitty.conf; cd -"
 alias hyprconf="cd ~/.config/hypr/configs; y"
 alias airplay="uxplay -bt709 -avdec -vsync -fps 60"
 alias virtscreen="~/.config/hypr/scripts/virtscreen.sh"
+alias adbshare="scrcpy --video-codec=h264 --video-bit-rate=8M --max-size=1920 --max-fps=60 --stay-awake"
 
 vencordinstall() {
   sh -c "$(curl -sS https://vencord.dev/install.sh)"
@@ -201,6 +205,30 @@ extract() {
 	done
 }
 
+archive() {
+    local format="$1"
+    local output="$2"
+    shift 2
+
+    case "$format" in
+        zip)
+            [[ "$output" != *.zip ]] && output="${output}.zip"
+            zip -r "$output" "$@"
+            ;;
+        targz|tar.gz)
+            [[ "$output" != *.tar.gz ]] && output="${output}.tar.gz"
+            tar -czf "$output" "$@"
+            ;;
+        tar)
+            [[ "$output" != *.tar ]] && output="${output}.tar"
+            tar -cf "$output" "$@"
+            ;;
+        *)
+            echo "Usage: archive {zip|targz|tar} <output> <file/dir>..."
+            return 1
+            ;;
+    esac
+}
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -217,3 +245,6 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# bun completions
+[ -s "/home/elrond/.bun/_bun" ] && source "/home/elrond/.bun/_bun"

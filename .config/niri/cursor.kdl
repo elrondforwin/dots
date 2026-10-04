@@ -1,0 +1,9 @@
+// Managed by the Noctalia cursor plugin - edits here are overwritten.
+cursor {
+    xcursor-theme "macOS"
+    xcursor-size 24
+}
+environment {
+    XCURSOR_THEME "macOS"
+    XCURSOR_SIZE "24"
+}

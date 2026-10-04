@@ -12,6 +12,7 @@ local vars = {
     keyToggleWallpapers = "SUPER + Y",
     keyToggleClipboard = "SUPER + V",
     keyToggleBar = "SUPER + SHIFT + W",
+    keyToggleDnD = "SUPER + SHIFT + D",
     keyLockScreen = "SUPER + O",
 
     keyOpenColorPicker = "SUPER + SHIFT + C",
@@ -21,6 +22,7 @@ local vars = {
     cmdToggleClipboard = "noctalia msg panel-toggle clipboard",
     cmdToggleBar = "noctalia msg bar-toggle default",
     cmdToggleWallpapers = "noctalia msg panel-toggle wallpaper",
+    cmdToggleDnD = "noctalia msg notification-dnd-toggle",
     cmdLockScreen = "noctalia msg session lock",
 
     cmdOpenColorPicker = "hyprpicker -a",
@@ -84,6 +86,7 @@ hl.bind(vars.keyLockScreen, hl.dsp.exec_cmd(vars.cmdLockScreen))
 ----------------------------------------
 hl.bind(vars.keyOpenColorPicker, hl.dsp.exec_cmd(vars.cmdOpenColorPicker))
 hl.bind(vars.keyScreenshot, hl.dsp.exec_cmd(vars.cmdScreenshot))
+hl.bind(vars.keyToggleDnD, hl.dsp.exec_cmd(vars.cmdToggleDnD))
 
 ----------------------------------------
 -- Window Management

@@ -154,6 +154,11 @@ bindkey '^[[1;5C' forward-word
 # Shell integrations and some aliases
 if command -v fzf > /dev/null; then
     eval "$(fzf --zsh)"
+
+    # noctalia fzf colors
+    if [ -f "$HOME/.config/fzf/themes/noctalia.sh" ]; then
+      source $HOME/.config/fzf/themes/noctalia.sh
+    fi
 fi
 
 if command -v bat > /dev/null; then
@@ -248,3 +253,6 @@ fi
 
 # bun completions
 [ -s "/home/elrond/.bun/_bun" ] && source "/home/elrond/.bun/_bun"
+
+# To customize prompt, run `p10k configure` or edit ~/dots/.p10k.zsh.
+[[ ! -f ~/dots/.p10k.zsh ]] || source ~/dots/.p10k.zsh

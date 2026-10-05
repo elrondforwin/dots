@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # SOME ESSENTIAL PACKAGES
 # yay -S eza zoxide nvim bat unrar-free ncdu fzf fastfetch
 
@@ -15,6 +8,11 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 if [ ! -d "$ZINIT_HOME" ]; then
    mkdir -p "$(dirname $ZINIT_HOME)"
    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+
+# enable starship prompt if the package is installed
+if command -v starship > /dev/null; then
+  eval "$(starship init zsh)"
 fi
 
 # Flatpak desktop integration fix
@@ -51,7 +49,7 @@ zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 
 # add powerlevel10k
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+# zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Load completions
 # autoload -Uz compinit && compinit
@@ -248,11 +246,5 @@ if command -v zoxide > /dev/null; then
     eval "$(zoxide init --cmd cd zsh)"
 fi
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # bun completions
 [ -s "/home/elrond/.bun/_bun" ] && source "/home/elrond/.bun/_bun"
-
-# To customize prompt, run `p10k configure` or edit ~/dots/.p10k.zsh.
-[[ ! -f ~/dots/.p10k.zsh ]] || source ~/dots/.p10k.zsh
